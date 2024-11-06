@@ -57,3 +57,5 @@ Docker image -- Oracle Database 19c (19.3) Enterprise Edition | **https://hub.do
 - NOTE
 ! Please do modify based on your own setup. This is purely based on my own lab setup.
 ```
+
+THE CONTRIBUTIONS IN THIS ORGANIZATION WERE NOT REVIEVED BY ORACLE EMPLOYEES. THE REPOSITORIES WERE ALSO NOT REVIEVED FOR SECURITU CONCERNS. USE AT YOUR OWN RISK.
