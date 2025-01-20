@@ -1,4 +1,4 @@
-# Oracle 21c with Ansible
+# oracle-database-ansible-samples
 
 Different database tasks automated using Ansible.
 
