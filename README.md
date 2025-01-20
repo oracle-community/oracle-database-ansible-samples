@@ -1,61 +1,54 @@
-# oracle21c
-Different database tasks with Ansible. 
+# Oracle 21c with Ansible
 
-```diff
-- NOTE
-! Make sure any Licence requirements from your side. Please do modify based on your own setup. This is purely based on my own lab setup. You can ask me any questions in relate to these playbooks - if you fork and modify to merge - let me know.
-```
+Different database tasks automated using Ansible.
 
-# SI database
-### i. create an empty Container database (CDB) using role "cdb_create_21c"
-### ii. create a pluggable database (PDB) using role "pdb21c_create"
+---
 
-# Grid Infrastructure / RAC 21c 
-### i. GI Software Install
-### ii. RAC RDBMS Software Install
-### iii. RAC Database Creation CDB & PDB
-### iv. GI for a Standalone Server
-
-## Grid Infrastructure Installation and Upgrade Guide for Linux
-https://docs.oracle.com/en/database/oracle/oracle-database/21/install-and-upgrade.html
-
-## Database Installation Guide for Linux
-https://docs.oracle.com/en/database/oracle/oracle-database/21/ladbi/index.html
-
-### software download page
-Required Oracle Software: Download the Oracle software from OTN or MOS depending on your support status. Oracle binaries are staged from the "edelivery: Oracle Database 21c Software (64-bit)". They have to be manually downloaded and made available for this article to apply 
-```
-http://www.oracle.com/technetwork/indexes/downloads/index.html
-```
-### Setup:
- * OS: OEL 7.5 
- * Ansible: ansible 2.7.6
- * Database Version: Oracle 21.3 Linux64
-
-## Roles
-
-roles                  | tasks
----------------------- | ----------------------------------------------------------------------
-dbsoftware21c_install |  **To Install Oracle SI database Software - multiple servers at a time https://github.com/asiandevs/oracle21c/tree/main/roles/dbsoftware21c_install**
-cdb_create_21c       |  **To deploy an empty Container Database (CDB) https://github.com/asiandevs/oracle21c/tree/main/roles/cdb_create_21c**
-pdb21c_create        |  **To deploy pluggable database (PDB) to an existing CDB https://github.com/asiandevs/oracle21c/tree/main/roles/pdb21c_create**
-sbdb21c_create       |  **To create a physical Standby database and setup Data Guard Broker https://github.com/asiandevs/oracle21c/tree/main/roles/sbdb21c_create**
-racgi21c_install     |  **To Install Oracle Grid Infrastructure Installation https://github.com/asiandevs/oracle21c/tree/main/roles/racgi21c_install**
-racdbsoft21c_install |  **To Install Oracle RAC software installation https://github.com/asiandevs/oracle21c/tree/main/roles/racdbsoft21c_install**
-racdb21c_create      |  **To create Two Node RACDB ~21C https://github.com/asiandevs/oracle21c/tree/main/roles/racdb21c_create**
-racdb21c_patch_apply |  **To apply GI Release Update and Database Release Update ~21C October 2021 https://github.com/asiandevs/oracle21c/tree/main/roles/racdb21c_patch_apply**
-racgi_ss_21c_install |  **Oracle Grid Infrastructure for a Standalone Server https://github.com/asiandevs/oracle21c/tree/main/roles/racgi_ss_21c_install**
-oracleclient21c_install| **Deployment of Oracle Database 21c Client for Linux x86–64 https://github.com/asiandevs/oracle21c/tree/main/roles/oracleclient21c_install** 
-RAC database upgrade / Downgrade [ using flashback] | **https://github.com/asiandevs/RAC18CUpgradeDowngrade**
-Oracle Cloud File System [ACFS] setup | **https://github.com/asiandevs/racdb_createacfs**
-Oracle Database Client Installation | **https://github.com/asiandevs/Oracle_Database_Client_Installation**
-Linux setup for Oracle Software Installation | **https://github.com/asiandevs/oraclelinuxsetup**
-Jenkins CI/CD - Deployment of Oracle RDBMS software Installation and Create Oracle Database | **https://github.com/asiandevs/oradbjenkins**
-Docker image -- Oracle Database 19c (19.3) Enterprise Edition | **https://hub.docker.com/r/banglamon/oracle193db**
-
-```diff
-- NOTE
-! Please do modify based on your own setup. This is purely based on my own lab setup.
-```
-
+**DISCLAIMER:**  
 THE CONTRIBUTIONS IN THIS ORGANIZATION WERE NOT REVIEWED BY ORACLE EMPLOYEES. THE REPOSITORIES WERE ALSO NOT REVIEWED FOR SECURITY CONCERNS. USE AT YOUR OWN RISK.
+
+## Installation
+
+This repository contains Ansible playbooks for Oracle Database 21c setup and management. Below are the requirements for installation:
+
+- OS: OEL 7.5
+- Ansible Version: 2.7.6
+- Database Version: Oracle 21.3 Linux64
+
+**Setup Instructions:**
+1. Download the required Oracle software from [Oracle Technology Network (OTN)](http://www.oracle.com/technetwork/indexes/downloads/index.html) or My Oracle Support (MOS), depending on your support status.
+2. Stage the Oracle binaries from "edelivery: Oracle Database 21c Software (64-bit)".
+3. Follow the tasks outlined in each role for your desired configuration.
+
+## Documentation
+
+Refer to Oracle's official documentation for detailed installation and upgrade guides:
+
+- [Grid Infrastructure Installation and Upgrade Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/21/install-and-upgrade.html)
+- [Database Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/21/ladbi/index.html)
+
+## Examples
+
+This repository includes roles for specific Oracle Database tasks. Below is a summary of the roles and their functionality:
+
+| Role                   | Description                                                                                                                                          |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| dbsoftware21c_install | Install Oracle SI database software on multiple servers. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/dbsoftware21c_install)   |
+| cdb_create_21c        | Deploy an empty Container Database (CDB). [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/cdb_create_21c)                        |
+| pdb21c_create         | Deploy a pluggable database (PDB) to an existing CDB. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/pdb21c_create)             |
+| sbdb21c_create        | Create a physical standby database and set up Data Guard Broker. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/sbdb21c_create) |
+| racgi21c_install      | Install Oracle Grid Infrastructure. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racgi21c_install)                            |
+| racdbsoft21c_install  | Install Oracle RAC software. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racdbsoft21c_install)                                |
+| racdb21c_create       | Create a two-node RAC database. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racdb21c_create)                                  |
+| racdb21c_patch_apply  | Apply GI and database release updates for 21c (October 2021). [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racdb21c_patch_apply) |
+| racgi_ss_21c_install  | Configure Oracle Grid Infrastructure for a standalone server. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racgi_ss_21c_install) |
+| oracleclient21c_install | Deploy Oracle Database 21c Client for Linux x86–64. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/oracleclient21c_install)   |
+
+## Help
+
+For questions related to these playbooks, feel free to contact me or open an issue in this repository.
+
+---
+
+**NOTE:**  
+Please modify these playbooks based on your own setup. This is purely based on a personal lab setup.
