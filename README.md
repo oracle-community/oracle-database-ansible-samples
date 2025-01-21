@@ -43,6 +43,10 @@ This repository includes roles for specific Oracle Database tasks. Below is a su
 | racdb21c_patch_apply  | Apply GI and database release updates for 21c (October 2021). [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racdb21c_patch_apply) |
 | racgi_ss_21c_install  | Configure Oracle Grid Infrastructure for a standalone server. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/racgi_ss_21c_install) |
 | oracleclient21c_install | Deploy Oracle Database 21c Client for Linux x86–64. [View role](https://github.com/asiandevs/oracle21c/tree/main/roles/oracleclient21c_install)   |
+racdb_preupgrade       |  **Pre Upgrade script**
+racdb_upgrade          |  **Upgrade RAC CDB Database to with one pluggable database PDB**
+racdb_predwngrade      |  **Prep Downgrade script**
+racdb_dwngrade         |  **Downgrade Oracle database to version using Flashback with minimum outage**
 
 ## Help
 
