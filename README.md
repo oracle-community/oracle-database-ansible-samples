@@ -8,6 +8,11 @@ Different database tasks automated using Ansible.
 THE CONTRIBUTIONS IN THIS ORGANIZATION WERE NOT REVIEWED BY ORACLE EMPLOYEES. THE REPOSITORIES WERE ALSO NOT REVIEWED FOR SECURITY CONCERNS. USE AT YOUR OWN RISK.
 
 ## Installation
+```diff
+- NOTE
+! Please do modify based on your own setup. This is purely based on my own lab setup.
+```
+
 
 This repository contains Ansible playbooks for Oracle Database 21c setup and management. Below are the requirements for installation:
 
@@ -54,5 +59,7 @@ For questions related to these playbooks, feel free to contact me or open an iss
 
 ---
 
-**NOTE:**  
-Please modify these playbooks based on your own setup. This is purely based on a personal lab setup.
+```diff
+- NOTE
+! Please do modify based on your own setup. This is purely based on my own lab setup.
+```
